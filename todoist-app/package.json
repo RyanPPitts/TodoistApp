@@ -4,12 +4,12 @@
   "private": true,
   "dependencies": {
 
-    // adding firebase dependencies to the project along with node sass
     "firebase": "^6.2.4",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "moment": "^2.24.0"
   },
   "scripts": {
     "start": "react-scripts start",

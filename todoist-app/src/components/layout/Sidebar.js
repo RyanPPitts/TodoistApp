@@ -1,12 +1,14 @@
-import React from 'react'
-import { FaChevronDown, 
+import React from 'react';
+import { 
+    FaChevronDown, 
     FaInbox, 
     FaRegCalendarAlt, 
     FaRegCalendar } 
 from 'react-icons/fa';
 
-export const Sidebar = () => (
-<div className='sidebar' data-testid='sidebar'>
+export const Sidebar = () => {
+    return (
+<div className='sidebar' data-testId='sidebar'>
     <ul className='sidebar__generic'>
         <li>
             <span>
@@ -45,3 +47,4 @@ export const Sidebar = () => (
     
 </div>
 );
+    };
