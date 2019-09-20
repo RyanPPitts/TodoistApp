@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "normalize": "^0.3.1",
+    "react-icons": "^3.7.0"
+  }
+}
