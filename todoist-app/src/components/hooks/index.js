@@ -36,7 +36,23 @@ export const useTasks = selectedProject => {
         :selectedProject === 'INBOX' || selectedProject === 0
         ? (unsubscribe = unsubscribe.where('date', '==', ''))
         : unsubscribe;
-        }, [selectedProject]);
+
+       unsubscribe = unsubscribe.onSnapshot(snapshot => {
+           const newTasks = snapshot.docs.map(task => ({
+               id: task.id,
+               ...task.data();
+           }));
+
+           setTasks(
+               selectedProject === 'NEXT 7'
+               ? newTasks.filter(
+                   task => moment(task.date, 'DD-MM-YYYY').diff(moment(), 'days') <= 7 &&
+                   task.archived !== true
+               ) 
+               : newTasks.filter(task => task.archived !==true)
+           )
+       });   
+    }, [selectedProject]);
 };
 
 // firebase go get our tasks with userId of xxx
